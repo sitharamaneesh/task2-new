@@ -34,5 +34,5 @@ jobs:
       # Deploy to GKE
       - name: Deploy to GKE
         run: |
-          kubectl apply -f your-k8s-manifest.yaml
+          kubectl apply -f vuejs-deployment.yaml
 
