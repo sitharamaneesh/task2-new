@@ -21,13 +21,14 @@ jobs:
           service_account_key: ${{ secrets.GCP_SA_KEY }}
       
       - name: Set GCP Project ID
-        run: gcloud config set project your-gcp-project-id
+        run: gcloud config set project nifty-altar-394805
       
       - name: Set GKE Cluster
         run: gcloud container clusters get-credentials cluster-prod --zone europe-north1-a
 
       - name: Install kubectl
         run: |
+          sudo yum install google-cloud-sdk-gke-gcloud-auth-plugin
           curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
           sudo install -o root -g root -m 0755 kubectl /usr/local/bin/kubectl
 
