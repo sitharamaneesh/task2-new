@@ -7,7 +7,7 @@ on:
 
 jobs:
   deploy-to-prod:
-    runs-on: self-hosted
+    runs-on: ubuntu-latest
 
     steps:
       - name: Checkout
@@ -24,7 +24,7 @@ jobs:
         run: gcloud config set project nifty-altar-394805
       
       - name: Set GKE Cluster
-        run: gcloud container clusters get-credentials cluster-prod --zone europe-north1-a
+        run: gcloud container clusters get-credentials cluster-dr --zone us-central1-a
 
       - name: Install kubectl
         run: |
