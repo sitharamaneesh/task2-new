@@ -18,4 +18,4 @@ spec:
               service:
                 name: vuejs
                 port:
-                  number: 80
+                  number: 8080
