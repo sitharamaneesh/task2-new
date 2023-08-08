@@ -30,6 +30,7 @@ jobs:
               kubectl apply -f vuejs-deployment.yaml
               kubectl apply -f ingress.yaml
               kubectl apply -f certificate.yaml
+              kubectl apply -f service.yaml
   deploy_gke_europe_north1:
     environment: 'main'  # This line was moved here, and the syntax was corrected.
     runs-on: self-hosted
