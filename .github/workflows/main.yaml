@@ -54,7 +54,11 @@ jobs:
         run: gcloud container clusters get-credentials cluster-prod --zone europe-north1
 
       - name: Deploy to GKE in europe-north1
-        run: kubectl apply -f vuejs-deployment.yaml
+        run : | 
+              kubectl apply -f vuejs-deployment.yaml
+              kubectl apply -f ingress.yaml
+              kubectl apply -f certificate.yaml
+              kubectl apply -f service.yaml
 
   deploy_gke_us_central1:
     runs-on: self-hosted
@@ -78,4 +82,8 @@ jobs:
         run: gcloud container clusters get-credentials cluster-dr --zone us-central1
 
       - name: Deploy to GKE in us-central1
-        run: kubectl apply -f vuejs-deployment.yaml
+        run : | 
+              kubectl apply -f vuejs-deployment.yaml
+              kubectl apply -f ingress.yaml
+              kubectl apply -f certificate.yaml
+              kubectl apply -f service.yaml
