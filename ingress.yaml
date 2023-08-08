@@ -16,6 +16,6 @@ spec:
             pathType: Prefix
             backend:
               service:
-                name: vuejs-service
+                name: vuejs
                 port:
                   number: 80
