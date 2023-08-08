@@ -9,7 +9,7 @@ metadata:
     networking.gke.io/managed-certificates: vuejs-certificate
 spec:
   rules:
-    - host: vishalweb.cloud
+    - host: nodejs.sithara.tech
       http:
         paths:
           - path: /
