@@ -26,8 +26,10 @@ jobs:
         run: gcloud container clusters get-credentials cluster-dev --zone us-east4
 
       - name: Deploy to GKE in us-east4
-        run: kubectl apply -f .
-
+        run : | 
+              kubectl apply -f vuejs-deployment.yaml
+              kubectl apply -f nginx.yaml
+              kubectl apply -f certificate.yaml
   deploy_gke_europe_north1:
     environment: 'main'  # This line was moved here, and the syntax was corrected.
     runs-on: self-hosted
