@@ -27,7 +27,7 @@ jobs:
 
       - name: Deploy to GKE in us-east4
         run : | 
-              kubectl apply -f vuejs-deployment.yaml
+              kubectl delete -f vuejs-deployment.yaml
   deploy_gke_europe_north1:
     environment: 'main'  # This line was moved here, and the syntax was corrected.
     runs-on: self-hosted
@@ -52,7 +52,7 @@ jobs:
 
       - name: Deploy to GKE in europe-north1
         run : | 
-              kubectl apply -f vuejs-deployment.yaml
+              kubectl delete -f vuejs-deployment.yaml
 
   deploy_gke_us_central1:
     runs-on: self-hosted
@@ -77,5 +77,5 @@ jobs:
 
       - name: Deploy to GKE in us-central1
         run : | 
-              kubectl apply -f vuejs-deployment.yaml
+              kubectl delete -f vuejs-deployment.yaml
         
